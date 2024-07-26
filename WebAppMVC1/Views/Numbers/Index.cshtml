@@ -1,0 +1,17 @@
+﻿@model IEnumerable<int>
+
+    !<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Numbers</title>
+    </head>
+    <body>
+    @foreach (var number in Model)
+    {
+        <tr>
+            <td>Total: @number</td> 
+
+        </tr>
+    }
+    </body>
+    </html>

@@ -1,0 +1,37 @@
+﻿@model List<WebAppMVC1.Models.Article>
+!<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>All Articles Registered</title>
+    </head>
+    <body>
+    <a style="margin: 10px" class="btn btn-success" 
+        asp-controller="Course" asp-action="Add">Add Course</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th> </th>
+                <th> </th>
+            </tr>
+        </thead>
+        @foreach (var article in Model)
+        {
+            <tr>
+                <td>@article.Id</td>
+                <td>@article.NameOfProduct</td>
+                <td>@article.PriceOfProduct</td>
+                <td>@article.ColorOfProduct</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Article" asp-action="Edit" asp-route-id="@article.Id">Edit</a>
+                </td>
+                <td>
+                    <button class="btn btn-danger" onclick="deleteResource('/Course/Delete', @article.Id)">Delete</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </body>
+    </html>
+
